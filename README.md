@@ -4,6 +4,25 @@
 
 一年后，2021年对于Android有了简单的理解，知道了这方向涉及的主要有哪些，但是自我感觉到了瓶颈期，不知道如何进行下一步学习，于是有了这么一个想法：通过自研一个App，对自己遇到的问题都做记录，这样使得对自己的能力有更加清晰的认知，同时不断提升自己。
 
+## 2021-3-2
+## 对于自定义的组合组件，即类似于直接继承RelativeLayout的自定义View，两种布局方式：
+1. 使用xml进行自定义布局
+注：使用inflater加载xml，建议使用merge为根节点，或者保存inflater返回的对象作为rootView
+2. 使用addView添加布局
+## ViewDragHelper的一些问题
+需求背景：有一个ViewGroup，可以添加图片，图片被添加可以拖拽，同时点击的时候图片可以被一个自定义View包围，自定义View中间透明，四个角有四个小方块。
+1. 往ViewGroup中添加View后所有被拖动的view位置都重置了
+解决方案：
+- View被拖动的时候记录一下，在ViewDragHelper的回调方法中onViewReleased进行记录；
+- 重写ViewGroup的onLayout方法，使用View的offsetLeftAndRight进行偏移；
+2. 自定义View被显示的时候，在图片被拖拽的时候进行跟随
+解决方案：
+- 点击图片的时候，显示View，和上面相同的方式存储View的位置
+- 拖拽的时候，重写ViewDragHelper的回调方法中onViewPositionChanged方法，调用View的offsetLeftAndRight进行偏移
+3. 添加自定义View的时机，如果在第一次点击的时候添加，发现添加后View无法拖动
+原因：因为添加的View被盖在图片上了，其index大于图片，所以ViewDragHelper事件传递是index从大到小依次检测，检测到自定义View的时候事件被丢弃，因为自定义View只能跟随图片拖动，不能自己单独拖动；
+解决方法：在ViewGroup创建时就添加自定义View，设置其不可见，点击的时候设置其可见即可；
+
 ## 2021-3-1
 ### View刷新的方法
 1. requestLayout，会导致onMeasure和onLayout被调用，但不一定会触发OnDraw；
