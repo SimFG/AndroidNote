@@ -4,6 +4,14 @@
 
 一年后，2021年对于Android有了简单的理解，知道了这方向涉及的主要有哪些，但是自我感觉到了瓶颈期，不知道如何进行下一步学习，于是有了这么一个想法：通过自研一个App，对自己遇到的问题都做记录，这样使得对自己的能力有更加清晰的认知，同时不断提升自己。
 
+## Android 工具
+- Termux 手机运行Linux命令
+- SAI 安装分成多个多apk的App工具
+- VMOS 手机运行操作系统
+- Xposed Android逆向
+- Auto.js 手机执行js脚本
+- scrcpy 一个高效手机投屏的Github项目
+
 ## 工具网站
 - 通过一段文字自动生成流程图：<https://flowchart.fun/>
 - 名字变量命名：<https://unbug.github.io/codelf/>
@@ -20,6 +28,13 @@
 - 表情包制作、个性化文字：<https://www.wakatool.com/>
 - 文字转字符画：<http://patorjk.com/software/taag>
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
+
+## 2021-3-4
+### 很多View中在androidx都对应了一个CompatView，比如ImageView对应AppCompatImageView，这是什么意思？
+参考：<https://www.jianshu.com/p/090fb849f81a>
+
+### ImageView中的scaleType温习
+参考：<https://blog.csdn.net/u013325929/article/details/50624140>
 
 ## 2021-3-2
 ### 对于自定义的组合组件，即类似于直接继承RelativeLayout的自定义View，两种布局方式：
