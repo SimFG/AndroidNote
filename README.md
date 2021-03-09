@@ -29,6 +29,97 @@
 - 文字转字符画：<http://patorjk.com/software/taag>
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 
+## 2021-3-8
+### 保存图片至相册
+在oneplus 7T pro(android 10)和vivo Z1(Android 9)上已测试
+```
+fun saveMediaToStorage(bitmap: Bitmap) : Uri? {
+    //Generating a file name
+    val filename = "${System.currentTimeMillis()}_maker.jpg"
+
+    //Output stream
+    var fos: OutputStream? = null
+
+    var imageUri: Uri? = null
+
+    //For devices running android >= Q
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        //getting the contentResolver
+        context?.contentResolver?.also { resolver ->
+
+            //Content resolver will process the contentvalues
+            val contentValues = ContentValues().apply {
+
+                //putting file information in content values
+                put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+            }
+
+            //Inserting the contentValues to contentResolver and getting the Uri
+            imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+            //Opening an outputstream with the Uri that we got
+            fos = imageUri?.let { resolver.openOutputStream(it) }
+        }
+    } else {
+        //These for devices running on android < Q
+        //So I don't think an explanation is needed here
+        val imagesDir =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+        val image = File(imagesDir, filename)
+        imageUri = Uri.fromFile(image)
+        fos = FileOutputStream(image)
+    }
+
+    fos?.use {
+        //Finally writing the bitmap to the output stream that we opened
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+        ToastUtils.showShort("图片已保存到相册")
+    }
+    context?.sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, imageUri))
+
+    return imageUri
+}
+```
+注：需要申请相册权限
+```
+ActivityCompat.requestPermissions(activity!!, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1000)
+```
+
+## 2021-3-5
+### requestDisallowInterceptTouchEvent含义
+当传入的参数为true时，表示子组件要自己消费这次事件，告诉父组件不要拦截（抢走）这次的事件。参考：<https://blog.csdn.net/shineflowers/article/details/48319825>
+
+### 剪切板
+简单使用
+```
+//获取剪贴板管理器：
+ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+// 创建普通字符型ClipData
+ClipData mClipData = ClipData.newPlainText("Label", "这里是要复制的文字");
+// 将ClipData内容放到系统剪贴板里。
+cm.setPrimaryClip(mClipData);
+```
+
+### 获取View的截图Bitmap两种方式
+```
+fun viewToBitmap(view: View) : Bitmap {
+    val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    view.draw(canvas)
+    return bitmap
+}
+
+fun viewToBitmap2(view: View) : Bitmap {
+    view.isDrawingCacheEnabled = true
+    view.buildDrawingCache()
+    val bitmap = view.drawingCache
+    view.isDrawingCacheEnabled = false
+    return bitmap
+}
+```
+
 ## 2021-3-4
 ### 很多View中在androidx都对应了一个CompatView，比如ImageView对应AppCompatImageView，这是什么意思？
 参考：<https://www.jianshu.com/p/090fb849f81a>
