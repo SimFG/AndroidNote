@@ -29,6 +29,21 @@
 - 文字转字符画：<http://patorjk.com/software/taag>
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 
+## 2021-3-9
+### adb安装，报错INSTALL_FAILED_TEST_ONLY
+解决方案：项目根目录下，配置gradle.properties配置项
+```
+android.injected.testOnly=false
+```
+参考：<https://www.cnblogs.com/lwbqqyumidi/p/10217076.html>
+
+### OverScroller和Scroller有什么区别呢
+两个类都属于Scrollers，Scroller出现的比较早，在API1就有了，OverScroller是在API9才添加上的，出现的比较晚，所以功能比较完善，OverScroller提供了对超出滑动边界的情况的处理，这两个类80%的API是一致的，OverScroller比Scroller额外添加了几个方法，包括了：isOverScrolled(),springBack(),fling(),notifyHorizontalEdgeReached(),notifyVerticalEdgeReached()。
+参考：<https://blog.csdn.net/zhaokaiqiang1992/article/details/43986365>
+
+### Canvas理解
+参考：<https://blog.csdn.net/carson_ho/article/details/60598775>
+
 ## 2021-3-8
 ### 保存图片至相册
 在oneplus 7T pro(android 10)和vivo Z1(Android 9)上已测试
