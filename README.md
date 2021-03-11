@@ -28,6 +28,27 @@
 - 表情包制作、个性化文字：<https://www.wakatool.com/>
 - 文字转字符画：<http://patorjk.com/software/taag>
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
+- 前端数据展示库D3：https://observablehq.com/@d3/gallery
+
+## 2021-3-11
+### NestedScrolling解析
+简介：view的touch事件分发机制是自上而下的，其touch事件要么被父View处理，要么被子View处理，很难在两者之间进行交互处理。但Google提供的NestedScrolling机制能够很好地解决这个问题。
+参考：
+- <https://www.jianshu.com/p/eeae65885043>
+- <https://www.jianshu.com/p/20efb9f65494>
+注：AndroidX中NestedScrollView其实就是以上的官方实现
+
+## 2021-3-10
+### DrawerLayout与SlidingPaneLayout
+DrawerLayout：<https://www.jianshu.com/p/0026621c70bc>
+SlidingPaneLayout：<https://zhuanlan.zhihu.com/p/234598182>
+区别：<https://www.codenong.com/cs107088957/>
+
+### Activity侧滑退出
+简介：将“测滑退出”分为两个过程：实现当前Activity跟随手指进行滑动；展现底部（上一级）Activity的view，并对其进行相应操作（各种动画）。
+参考：
+- <https://www.jianshu.com/p/1a2d2ce6e8f2>
+- <https://juejin.cn/post/6844903902937088013#heading-22>
 
 ## 2021-3-9
 ### adb安装，报错INSTALL_FAILED_TEST_ONLY
