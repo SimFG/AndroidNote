@@ -26,6 +26,24 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-3-15
+### RecyclerView中onTouch不执行DOWN事件
+参考： <https://www.jianshu.com/p/a4dc607cd08f>
+
+## 2021-3-14
+### 调试SmartSwipe-在StretchConsumerActivity中，点击事件最开始会调用onStartNestedScroll方法三次
+- 事件发起是在RecyclerView中，onInterceptTouchEvent
+- 第一次进入onStartNestedScroll，是RecyclerView的父类
+- 其实当前布局中存在两个SmartSwipeWrapper，一个是RecyclerView的父类，另外一个是DecorView的第一个子类
+- 这个方法会进入最后的handle为true，会调用startNestedScroll，这个是第二次进入onStartNestedScroll
+- 最后一次进入是因为在第一次onStartNestedScroll方法返回了true，调用的onNestedScrollAccepted方法，然后导致了第三次进入onStartNestedScroll
+### 为什么DecorView的第一个子类是SmartSwipeWrapper呢？
+- 这个是在MyApp中onCreate中进行注册的，即SmartSwipeBack#activityBezierBack
+
+## 2021-3-12
+### 再次理解内嵌滑动
+参考：https://blog.csdn.net/King1425/article/details/61915758/
+
 ## 2021-3-11
 ### NestedScrolling解析
 简介：view的touch事件分发机制是自上而下的，其touch事件要么被父View处理，要么被子View处理，很难在两者之间进行交互处理。但Google提供的NestedScrolling机制能够很好地解决这个问题。
