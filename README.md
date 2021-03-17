@@ -14,6 +14,8 @@
 - 图片压缩：<https://tinypng.com/>
 - 生成代码片段图片：<https://carbon.now.sh/>
 - json格式化：<https://www.json.cn/>
+- 图片更换背景：<https://www.qtool.net/bgphoto>
+- markdown生成目录：<https://toc.codepie.fun/>
 
 ## 有趣小知识点
 - chrome 书签脚本：可以在某个书签中写js代码，一键操作网页，参考：<https://www.zhihu.com/question/267011124>
@@ -26,11 +28,15 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-3-17
+分析[SmartSwipe](https://github.com/luckybilly/SmartSwipe)中的DrawerConsumer，详细见[个人SmartSwipe](https://github.com/SimFG/SmartSwipe)
+
 ## 2021-3-15
 ### RecyclerView中onTouch不执行DOWN事件
 参考： <https://www.jianshu.com/p/a4dc607cd08f>
 
 ## 2021-3-14
+分析[SmartSwipe](https://github.com/luckybilly/SmartSwipe)
 ### 调试SmartSwipe-在StretchConsumerActivity中，点击事件最开始会调用onStartNestedScroll方法三次
 - 事件发起是在RecyclerView中，onInterceptTouchEvent
 - 第一次进入onStartNestedScroll，是RecyclerView的父类
@@ -55,7 +61,9 @@
 ## 2021-3-10
 ### DrawerLayout与SlidingPaneLayout
 DrawerLayout：<https://www.jianshu.com/p/0026621c70bc>
+
 SlidingPaneLayout：<https://zhuanlan.zhihu.com/p/234598182>
+
 区别：<https://www.codenong.com/cs107088957/>
 
 ### Activity侧滑退出
