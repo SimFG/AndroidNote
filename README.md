@@ -28,6 +28,12 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-3-30
+### 寻找SmartSwipe中导致view的requestLayout失效原因
+未找到原因，但是看到一篇比较好的文章，[android 设置状态栏文字颜色引起的页面无法重新layout的问题](https://www.jianshu.com/p/b843b537309b)
+### 使用AS中模拟器无法调试view的源码
+解决办法：下载模拟器镜像选择无google服务，当然前提是模拟器的版本与本地的编译版本一致。
+
 ## 2021-3-17
 分析[SmartSwipe](https://github.com/luckybilly/SmartSwipe)中的DrawerConsumer，详细见[个人SmartSwipe](https://github.com/SimFG/SmartSwipe)
 
@@ -48,7 +54,7 @@
 
 ## 2021-3-12
 ### 再次理解内嵌滑动
-参考：https://blog.csdn.net/King1425/article/details/61915758/
+参考：<https://blog.csdn.net/King1425/article/details/61915758/>
 
 ## 2021-3-11
 ### NestedScrolling解析
