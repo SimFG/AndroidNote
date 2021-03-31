@@ -28,6 +28,16 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-3-31
+### xml中如何取消主题中的某个属性
+将值设置为`@null`
+### xml中`android:insetTop`含义
+可实现以下场景：给一个view设置背景，但是不想这个背景填充整个view，那么就可以用这个属性进行偏移，且保证这个view的大小，如果可以适当减小view的大小，那么用margin就可以。
+### 查看MaterialDesign中的组件
+- [使用MaterialButton](https://www.jianshu.com/p/bc71b4179cb2)
+- [Drawable自定义](https://juejin.cn/post/6844903460987469838)
+- [使用ShapeImageView](https://juejin.cn/post/6869376452040196109)
+
 ## 2021-3-30
 ### 寻找SmartSwipe中导致view的requestLayout失效原因
 未找到原因，但是看到一篇比较好的文章，[android 设置状态栏文字颜色引起的页面无法重新layout的问题](https://www.jianshu.com/p/b843b537309b)
