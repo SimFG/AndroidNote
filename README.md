@@ -28,6 +28,14 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-4-28
+### EventBus 源码阅读
+参考： <https://lishuaiqi.top/2019/08/19/Eventbus-1-baseUsages/>
+### android APT
+参考： 
+- <https://juejin.cn/post/6844903458206646280#heading-17>
+- <https://blog.csdn.net/wengliuhu/article/details/113917457>
+
 ## 2021-3-31
 ### xml中如何取消主题中的某个属性
 将值设置为`@null`
