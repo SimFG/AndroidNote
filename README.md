@@ -28,6 +28,18 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-5-7
+### BuildConfig含义
+参考： <https://www.jianshu.com/p/3d9b23afe514>
+### Android 跳转权限设置界面的终极适配
+参考： <https://www.jianshu.com/p/58c6ca8173c4>
+### 看懂编译注解annotationProcessor和kapt
+参考： <https://www.jianshu.com/p/472e66632ed0>
+### TextView的setAllCaps方法
+默认情况TextView中设置的文本会全部转换为大写，使用上述方法，传入false则可以取消全部转换为大写
+### WebView中的getHitTestResult方法
+参考： <https://www.jianshu.com/p/df022e3105cf>
+
 ## 2021-4-28
 ### EventBus 源码阅读
 参考： <https://lishuaiqi.top/2019/08/19/Eventbus-1-baseUsages/>
