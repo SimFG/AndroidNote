@@ -28,6 +28,12 @@
 - 图片转字符画：<http://life.chacuo.net/convertphoto2char>
 - 前端数据展示库D3：https://observablehq.com/@d3/gallery
 
+## 2021-6-10
+### 关于Fresco解析的好文章
+- <https://juejin.cn/post/6844903559280984071#heading-9>
+- <https://github.com/desmond1121/Fresco-Source-Analysis>
+- 
+
 ## 2021-5-7
 ### BuildConfig含义
 参考： <https://www.jianshu.com/p/3d9b23afe514>
